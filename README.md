@@ -8,6 +8,7 @@ An example Electron/Typescript app with a C++/CMake backend
 - [ ] Building an executable file from the Electron app
 - [ ] Building an installer install
 - [ ] Everything built with CMake commands (i.e. `cmake --build .`)
+- [ ] Electron app will use custom libraries via Webpack
 
 ## Project Structure
 
@@ -15,8 +16,8 @@ An example Electron/Typescript app with a C++/CMake backend
 .
 └── <root>/
     ├── CMakeLists.txt
-    ├── electron
-    └── src/
+    ├── ui
+    └── lib/
         └── MyLib/
             ├── MyLib.cpp
             └── MyLib.h

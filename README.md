@@ -8,7 +8,7 @@ An example Electron/Typescript app with a C++/CMake backend
 - [ ] Using that static library in an Electron app
 - [ ] Building an executable file from the Electron app
 - [ ] Building an installer
-- [ ] Everything built with CMake commands (i.e. `cmake --build .`)
+- [ ] Everything built with `npm` commands (see `cmake-js`)
 - [ ] Electron app will use custom Javascript libraries via Webpack (1.0+)
 - [ ] Electron app will use React (1.0+)
 

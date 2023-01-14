@@ -3,8 +3,8 @@ An example Electron/Typescript app with a C++/CMake backend
 
 ## What's covered in this project
 
-- [ ] Building a static library from C++
-- [ ] C++ app will support boost
+- [x] Building a static library from C++
+- [x] C++ app will support boost
 - [ ] Using that static library in an Electron app
 - [ ] Building an executable file from the Electron app
 - [ ] Building an installer install

@@ -17,10 +17,10 @@ An example Electron/Typescript app with a C++/CMake backend
 ```
 .
 └── <root>/
-    ├── CMakeLists.txt
     ├── ui
     └── lib/
         └── MyLib/
+            ├── CMakeLists.txt
             ├── MyLib.cpp
             └── MyLib.h
 ```

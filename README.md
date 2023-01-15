@@ -12,6 +12,22 @@ An example Electron/Typescript app with a C++/CMake backend
 - [ ] Electron app will use custom Javascript libraries via Webpack (1.0+)
 - [ ] Electron app will use React (1.0+)
 
+## Usage
+
+```
+# clone the repo
+git clone https://github.com/lulzapps/ElectronCpp.git
+
+# Navigate into repo
+cd ElectronCpp
+
+# install requirements
+npm install
+
+# launch
+npm start
+```
+
 ## Project Structure
 
 ```

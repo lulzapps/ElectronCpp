@@ -5,3 +5,9 @@
  * `contextIsolation` is turned on. Use the contextBridge API in `preload.js`
  * to expose Node.js functionality from the main process.
  */
+
+let connectbtn = document.getElementById("txtbtn");
+connectbtn.addEventListener("click", () =>
+{
+    console.log("connectbtn clicked");
+});

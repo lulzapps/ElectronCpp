@@ -20,5 +20,9 @@ conan_cmake_run(REQUIRES
 )
 conan_basic_setup(NO_OUTPUT_DIRS KEEP_RPATHS)
 
+# Essential include files to build a node addon,
+# you should add this line in every CMake.js based project.
+include_directories(${CMAKE_JS_INC})
+
 add_subdirectory(MyLib)
 

@@ -6,7 +6,10 @@
  * to expose Node.js functionality from the main process.
  */
 
+var worker = new Worker('./worker.js');
+
 let connectbtn = document.getElementById("txtbtn");
+console.log("connectbtn: " + connectbtn);
 connectbtn.addEventListener("click", () =>
 {
     console.log("connectbtn clicked");

@@ -5,10 +5,11 @@ set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 include(CMake/conan.cmake)
-conan_cmake_run(REQUIRES
-    boost/1.81.0
-    BASIC_SETUP CMAKE_TARGETS NO_OUTPUT_DIRS
-    BUILD missing
+conan_cmake_configure(
+    REQUIRES 
+        boost/1.81.0
+    GENERATORS 
+        cmake_find_package
     OPTIONS
         boost:shared=False 
         boost:without_test=False 
@@ -18,11 +19,24 @@ conan_cmake_run(REQUIRES
         boost:without_exception=False
         boost:without_contract=False
 )
-conan_basic_setup(NO_OUTPUT_DIRS KEEP_RPATHS)
+
+conan_cmake_autodetect(settings)
+
+conan_cmake_install(PATH_OR_REFERENCE .
+    BUILD 
+        missing
+    REMOTE 
+        conancenter
+    SETTINGS 
+    ${settings}
+)
 
 # Essential include files to build a node addon,
 # you should add this line in every CMake.js based project.
 include_directories(${CMAKE_JS_INC})
+
+find_package(Boost REQUIRED)
+include_directories(${Boost_INCLUDE_DIRS})
 
 add_subdirectory(MyLib)
 

@@ -1,4 +1,4 @@
-// #include <boost/format.hpp>
+#include <fmt/format.h>
 
 #include "MyClass.h"
 
@@ -12,9 +12,9 @@ int add(int x, int y)
     return (x*2) + (y*3);
 }
 
-Napi::Number example::addWrapped(const Napi::CallbackInfo &info)
+Napi::Number addWrapped(const Napi::CallbackInfo &info)
 {
-    Napi::Env env = info.Env();
+    Napi::Env env = info.Env(); 
 
     // check if arguments are integer only.
     if (info.Length() < 2 || !info[0].IsNumber() || !info[1].IsNumber())
@@ -32,7 +32,7 @@ Napi::Number example::addWrapped(const Napi::CallbackInfo &info)
     return returnValue;
 }
 
-Napi::Object example::Init(Napi::Env env, Napi::Object exports)
+Napi::Object Init(Napi::Env env, Napi::Object exports)
 {
     // export Napi function
     exports.Set("add", Napi::Function::New(env, example::addWrapped));
@@ -61,8 +61,7 @@ std::string MyClass::text() const
 
 std::string MyClass::addText(std::uint32_t x, std::uint32_t y) const
 {
-    // return (boost::format("Adding %1% + %2%  = %3%") % x % y % (x+y)).str();
-    return {};
+    return fmt::format("Adding {} + {} = {}", x, y, (x+y));
 }
 
 }

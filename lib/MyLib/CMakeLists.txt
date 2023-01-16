@@ -27,7 +27,10 @@ set_target_properties(MyLib PROPERTIES PREFIX "" SUFFIX ".node")
 
 # Essential library files to link to a node addon,
 # you should add this line in every CMake.js based project.
-target_link_libraries(MyLib ${CMAKE_JS_LIB})
+target_link_libraries(MyLib 
+    fmt::fmt
+    ${CMAKE_JS_LIB}
+)
 
 # Include N-API wrappers
 execute_process(COMMAND node -p "require('node-addon-api').include"

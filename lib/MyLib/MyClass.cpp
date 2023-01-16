@@ -1,4 +1,4 @@
-#include <boost/format.hpp>
+// #include <boost/format.hpp>
 
 #include "MyClass.h"
 
@@ -61,7 +61,8 @@ std::string MyClass::text() const
 
 std::string MyClass::addText(std::uint32_t x, std::uint32_t y) const
 {
-    return (boost::format("Adding %1% + %2%  = %3%") % x % y % (x+y)).str();
+    // return (boost::format("Adding %1% + %2%  = %3%") % x % y % (x+y)).str();
+    return {};
 }
 
 }
